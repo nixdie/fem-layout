@@ -1,22 +1,28 @@
 /* Border box declaration 
 https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
+
+
 /* inherit border-box on all elements in the universe and before and after
  */
-*, 
-*:before, 
+
+*,
+*:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
 	font-family: Arial, Geneva, sans-serif;
 }
+
 a {
 	color: #2772B0;
 }
+
 .wrapper {
 	width: 97%;
 	max-width: 1200px;
@@ -27,17 +33,77 @@ a {
 
 div img {
 	width: 100%;
-	max-width: 225px; 
+	max-width: 225px;
 }
+
 
 /* grid system -- mobile first! */
 
+.row-1 {
+	max-width: 100%;
+}
+
+.row-1:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.col-1-of-4 {
+	padding-left: 5%;
+	padding-right: 5%;
+	float: left;
+	width: 100%;
+	background-color: rgb(81, 184, 81);
+	border: 1px solid black;
+}
+
+.col-1-of-2 {
+	padding-left: 5%;
+	padding-right: 5%;
+	float: left;
+	width: 100%;
+	background-color: pink;
+	border: 1px solid black;
+}
+
+.col-1 {
+	padding-left: 5%;
+	padding-right: 5%;
+	background-color: rgb(197, 197, 94);
+	border: 1px solid black;
+}
+
 
 /* Mobile Landscape Screen Sizes */
-@media only screen and (min-width: 480px)  {
 
+@media only screen and (min-width: 480px) {
+	.col-1-of-4 {
+		padding-left: 1%;
+		padding-right: 1%;
+		width: 40%;
+	}
 }
-/* Desktop screen Sizes */
-@media only screen and (min-width: 768px) {
 
+
+/* Desktop screen Sizes */
+
+@media only screen and (min-width: 768px) {
+	.col-1-of-4 {
+		width: 20%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	.col-1-of-2 {
+		width: 46%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+
+	.col-1 {
+		width: 96%;
+		margin-left: 2%;
+		margin-right: 2%;
+		padding-right: 60%;
+	}
 }
