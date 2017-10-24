@@ -24,6 +24,8 @@ article img {
   width: 100%;
   max-width: 250px;
 }
+
+
 nav {
   background: url(../img/scallop.png) repeat-x;
 }
@@ -35,50 +37,55 @@ nav ul {
   border-bottom: 3px solid #cc8850;
   overflow: auto;
 
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
 }
 /* splits nav into 2 columns
 http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
 nav li:nth-child(even) {
-  width: 50%;
-  float: right;
+  flex: 0 0 44%;
   padding: 0.5em;
 }
 nav li:nth-child(odd) {
-  width: 50%;
-  float: left;
-    padding: 0.5em;
+  flex: 0 2 40%;
+  padding: 0.5em;
 }
 nav a {
   color: #c80060;
   text-decoration: none;
-  display: block;
+  display: flex;
   padding-left:3.333333%;
 }
 nav a:hover {
   color:#00c4c7;
 }
 
-
-.row:before, 
-.row:after {
-    content:"";
-    display: table;
-    clear:both;
+header{ 
+  display: flex;
+  justify-content: center;
 }
+
 div.row {
   background-color: #fff6e0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 1em;
+  display: flex;
+
 }
+
+/* 
 .floatleft {
-  float: left;
+  justify-content: flex-start;
   margin: 0 1em 1em 0;
 }
 .floatright {
-  float: right;
+  justify-content: flex-end;
   margin: 0 0 1em 1em;
-}
+} */
+
 [class*='sidebar'] {
   border: 1px solid #00c4c7;
   border-radius: 10px;
@@ -145,7 +152,8 @@ footer a {
   .col-4,
   .col-1-2,
   .col-1-4  {
-  width: 96.66666%;
+    flex: 0 0 96%;
+  /* width: 96.66666%; */
 }
 
 
@@ -163,24 +171,27 @@ footer a {
 .col-3,
 .col-4,
 .col-1-4 {
-  width: 96.66666%;
+  flex: 0 0 96%;
+  /* width: 96.66666%; */
 }
 div.row {
   padding: 0 2em;
+  display: flex;
 }
 aside[class*='sidebar'] {
-  float: left;
-  width: 47%;
+  flex: 0 0 47%;
   margin-right: 3%;
+
+  /* float: left;
+  width: 47%;
+  */ 
 }
 
   nav li,
   nav li:nth-child(even),
   nav li:nth-child(odd) {
-    display: inline-block;
-    float: none;
-    width: auto;
-    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
   }
   nav a {
       padding: 0em 1em 0em 1em;
@@ -188,6 +199,10 @@ aside[class*='sidebar'] {
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 850px) { 
+  header {
+  justify-content: flex-start;  
+  }
+
   .wrapper {
       width: 97%;
       max-width: 1200px;
@@ -195,24 +210,24 @@ aside[class*='sidebar'] {
   }
 
   [class*='col-'] {
-    float: left;
+    /* float: left; */
     margin-left: 3.33333%;
     min-height: 1px;
   }
   .col-1,
   .col-1-2,
   .col-1-4 {
-    width: 20.83333%;
-  }
+    flex: 0 0 20%;
+    }
   .col-2 {
-    width: 44.99999%;
-  }
+    flex: 0 0 44%;
+    }
   .col-3 {
-    width: 69.16665%;
-  }
+    flex: 0 0 69%;
+    }
   .col-4 {
-    width: 96.66666%;
-  }
+    flex: 0 0 96%;
+    }
   h2 {
     font-size: 3em;
     border-bottom: 2px dotted #c80060;
@@ -222,15 +237,24 @@ aside[class*='sidebar'] {
   }
   div.row {
     padding: 0;
+    display: flex;
+    flex-flow: row wrap;
   }
+
+  nav ul {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    flex: 0 0 20%;
+    }
+  
   nav li,
   nav li:nth-child(even),
   nav li:nth-child(odd) {
     display: inline-block;
     float: none;
     width: auto;
-    padding: 0;
-  }
+    padding: 0; 
+  } 
   nav a {
       padding: 0em 1em 0em 1em;
   }

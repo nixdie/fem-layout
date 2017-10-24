@@ -36,6 +36,10 @@ nav ul.full-width {
   overflow: auto;
 
 }
+
+ul{
+  list-style-type: none;
+}
 /* splits nav into 2 columns
 http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
 nav li:nth-child(even) {
@@ -55,6 +59,10 @@ nav a {
   padding-left:3.333333%;
 }
 nav a:hover {
+  color:#00c4c7;
+}
+
+a .active {
   color:#00c4c7;
 }
 
@@ -127,6 +135,7 @@ footer a {
   text-decoration: none;
 }
 /* grid system */
+
 .row {
   display: flex;
   flex-flow: row wrap;
@@ -140,18 +149,7 @@ footer a {
   flex: 0 0 100%;
   margin: 0;
 }
-[class*="sidebar"] {
-  flex: 0 0 100%;
-  margin-bottom: 2em;
-  margin-right: 1em;
-}
-.row.col-1-4 {
-  margin-top: 3em;
-}
-/* global alignment options */
-.reverse {
-  flex-direction: row-reverse;
-}
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 550px) { 
@@ -250,3 +248,5 @@ div.row {
     order: 4;
   }
 }
+
+
